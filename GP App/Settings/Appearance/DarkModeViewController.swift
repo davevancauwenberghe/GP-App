@@ -5,117 +5,91 @@
 //  Created by Dave Van Cauwenberghe on 04/08/2023.
 //
 
+import SwiftUI
 import UIKit
 
-class DarkModeViewController: UITableViewController {
+/// Enumeration representing the three possible appearance modes.
+enum AppearanceMode: String, CaseIterable, Identifiable {
+    case system = "Use System Appearance"
+    case dark = "Enable Dark mode"
+    case light = "Enable Light mode"
 
-    private let darkModeKey = "DarkModeEnabled"
-    private let useSystemAppearanceKey = "AppUsesSystemAppearance"
+    var id: Self { self }
+}
 
-    let options = ["Use System Appearance", "Enable Dark mode", "Enable Light mode"]
+/// SwiftUI view for selecting and applying dark/light/system appearance.
+struct DarkModeViewController: View {
+    // Persisted user settings
+    @AppStorage("AppUsesSystemAppearance") private var useSystemAppearance: Bool = true
+    @AppStorage("DarkModeEnabled") private var darkModeEnabled: Bool = false
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupNavigationBar()
-        setupTableView()
-        tableView.tableFooterView = UIView()
-        updateSwitchesBasedOnUserPreference()
-    }
-
-    private func setupNavigationBar() {
-        title = "Dark mode"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-
-    private func setupTableView() {
-        tableView.register(DarkModeTableViewCell.self, forCellReuseIdentifier: DarkModeTableViewCell.reuseIdentifier)
-    }
-
-    private func updateSwitchesBasedOnUserPreference() {
-        let isDarkModeEnabled = UserDefaults.standard.bool(forKey: darkModeKey)
-        let usesSystemAppearance = UserDefaults.standard.bool(forKey: useSystemAppearanceKey)
-
-        let systemAppearanceSwitch = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? DarkModeTableViewCell
-        systemAppearanceSwitch?.switchControl.isOn = usesSystemAppearance
-
-        let darkModeSwitch = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? DarkModeTableViewCell
-        darkModeSwitch?.switchControl.isOn = isDarkModeEnabled && !usesSystemAppearance
-
-        let lightModeSwitch = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? DarkModeTableViewCell
-        lightModeSwitch?.switchControl.isOn = !isDarkModeEnabled && !usesSystemAppearance
-        
-        setAppWideDarkMode(isDarkModeEnabled)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-        updateSwitchesBasedOnUserPreference()
-    }
-
-    private func setAppWideDarkMode(_ enabled: Bool) {
-        if #available(iOS 13.0, *) {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                windowScene.windows.forEach { window in
-                    let useSystemAppearance = UserDefaults.standard.bool(forKey: useSystemAppearanceKey)
-                    window.overrideUserInterfaceStyle = useSystemAppearance ? .unspecified : (enabled ? .dark : .light)
+    /// Binding that maps UserDefaults values to a single AppearanceMode.
+    private var selection: Binding<AppearanceMode> {
+        Binding<AppearanceMode>(
+            get: {
+                if useSystemAppearance {
+                    return .system
+                } else {
+                    return darkModeEnabled ? .dark : .light
                 }
+            },
+            set: { newValue in
+                switch newValue {
+                case .system:
+                    useSystemAppearance = true
+                    // Preserve current system style
+                    let currentIsDark = UITraitCollection.current.userInterfaceStyle == .dark
+                    darkModeEnabled = currentIsDark
+                case .dark:
+                    useSystemAppearance = false
+                    darkModeEnabled = true
+                case .light:
+                    useSystemAppearance = false
+                    darkModeEnabled = false
+                }
+                applyAppearance()
             }
+        )
+    }
+
+    var body: some View {
+        Form {
+            Section {
+                Picker("Appearance Mode", selection: selection) {
+                    ForEach(AppearanceMode.allCases) { mode in
+                        Label(mode.rawValue, systemImage: iconName(for: mode))
+                            .tag(mode)
+                    }
+                }
+                .pickerStyle(.inline)
+            }
+        }
+        .navigationTitle("Dark mode")
+        .onAppear(perform: applyAppearance)
+    }
+
+    /// Applies the selected appearance to all app windows.
+    private func applyAppearance() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        windowScene.windows.forEach { window in
+            window.overrideUserInterfaceStyle = useSystemAppearance ? .unspecified : (darkModeEnabled ? .dark : .light)
+        }
+    }
+
+    /// Returns the SF Symbol for each mode.
+    private func iconName(for mode: AppearanceMode) -> String {
+        switch mode {
+        case .system: return "gear"
+        case .dark:   return "moon.fill"
+        case .light:  return "sun.max.fill"
         }
     }
 }
 
-// MARK: - TableView DataSource and Delegate
-
-extension DarkModeViewController {
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DarkModeTableViewCell.reuseIdentifier, for: indexPath) as! DarkModeTableViewCell
-
-        cell.titleLabel.text = options[indexPath.row]
-
-        cell.iconImageView.image = UIImage(systemName: indexPath.row == 0 ? "gear" : (indexPath.row == 1 ? "moon.fill" : "sun.max.fill"))
-
-        let isDarkModeEnabled = UserDefaults.standard.bool(forKey: darkModeKey)
-        let usesSystemAppearance = UserDefaults.standard.bool(forKey: useSystemAppearanceKey)
-        cell.switchControl.isOn = indexPath.row == 0 ? usesSystemAppearance : (indexPath.row == 1 ? isDarkModeEnabled && !usesSystemAppearance : !isDarkModeEnabled && !usesSystemAppearance)
-
-        cell.switchValueChanged = { [weak self] isOn in
-            self?.switchValueChanged(isOn, cell: cell, at: indexPath)
+struct DarkModeViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            DarkModeViewController()
         }
-
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-
-    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.row >= options.count
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-
-    private func switchValueChanged(_ isOn: Bool, cell: DarkModeTableViewCell, at indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            UserDefaults.standard.set(isOn, forKey: useSystemAppearanceKey)
-            if isOn {
-                UserDefaults.standard.set(traitCollection.userInterfaceStyle == .dark, forKey: darkModeKey)
-            }
-        } else if indexPath.row == 1 {
-            UserDefaults.standard.set(false, forKey: useSystemAppearanceKey)
-            UserDefaults.standard.set(isOn, forKey: darkModeKey)
-        } else if indexPath.row == 2 {
-            UserDefaults.standard.set(false, forKey: useSystemAppearanceKey)
-            UserDefaults.standard.set(!isOn, forKey: darkModeKey)
-        }
-        updateSwitchesBasedOnUserPreference()
     }
 }

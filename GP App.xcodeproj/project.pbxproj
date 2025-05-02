@@ -17,7 +17,6 @@
 		550B0AB52A6DFA3E001BB700 /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B0AB42A6DFA3E001BB700 /* FeaturedViewController.swift */; };
 		550B0AB72A6DFB02001BB700 /* Featured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B0AB62A6DFB02001BB700 /* Featured.swift */; };
 		550B0ABB2A6E0378001BB700 /* FeaturedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B0ABA2A6E0378001BB700 /* FeaturedDetailViewController.swift */; };
-		551A7E2F2A88611B005D5F39 /* SettingsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A7E2E2A88611B005D5F39 /* SettingsTabBarController.swift */; };
 		5522079A2A7AF6C600675CC4 /* CopyrightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552207992A7AF6C600675CC4 /* CopyrightViewController.swift */; };
 		5522079C2A7AF79A00675CC4 /* PhotoQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522079B2A7AF79A00675CC4 /* PhotoQualityViewController.swift */; };
 		5522079F2A7AF97A00675CC4 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522079E2A7AF97A00675CC4 /* ThankYouViewController.swift */; };
@@ -31,8 +30,6 @@
 		5558BE4C2A733E5D006CB7BD /* Portrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558BE4B2A733E5D006CB7BD /* Portrait.swift */; };
 		5558BE4E2A733F78006CB7BD /* PortraitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558BE4D2A733F78006CB7BD /* PortraitDetailViewController.swift */; };
 		556D5ECC2A79D4FD00C91DCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D5ECB2A79D4FD00C91DCF /* SettingsViewController.swift */; };
-		556D5ECE2A79D51200C91DCF /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D5ECD2A79D51200C91DCF /* SettingsViewCell.swift */; };
-		5573C4632AD0EED200ECA231 /* IconChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573C4622AD0EED200ECA231 /* IconChangeViewController.swift */; };
 		5576E43D2A7A717800A1707D /* ReleaseNotesViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576E43C2A7A717800A1707D /* ReleaseNotesViewController.swift.swift */; };
 		557B96782A59D9CC0032FDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B96772A59D9CC0032FDFD /* AppDelegate.swift */; };
 		557B967A2A59D9CC0032FDFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B96792A59D9CC0032FDFD /* SceneDelegate.swift */; };
@@ -48,7 +45,8 @@
 		55A1B4B32A76E7BD00E47B40 /* VaultEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1B4B22A76E7BD00E47B40 /* VaultEntryTableViewCell.swift */; };
 		55BC65CD2A84677B00699D42 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC65CC2A84677B00699D42 /* ContactViewCell.swift */; };
 		55BC65CF2A84682F00699D42 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC65CE2A84682F00699D42 /* ContactViewController.swift */; };
-		55D5FCE92A7D3C35005427BC /* DarkModeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5FCE82A7D3C35005427BC /* DarkModeViewCell.swift */; };
+		55D0CBA02DC56E070095F86E /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D0CB9F2DC56E070095F86E /* SettingsViewCell.swift */; };
+		55D0CBA12DC56E070095F86E /* SettingsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D0CB9E2DC56E070095F86E /* SettingsTabBarController.swift */; };
 		55D753342A87B91F00810E05 /* VaultTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D753332A87B91F00810E05 /* VaultTabBarController.swift */; };
 		55D81D772A77070B00F67E08 /* VaultEntryParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D81D762A77070B00F67E08 /* VaultEntryParentViewController.swift */; };
 		55DF165A2A7316D6000D7681 /* LandscapeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DF16592A7316D6000D7681 /* LandscapeViewCell.swift */; };
@@ -111,7 +109,6 @@
 		550B0AB42A6DFA3E001BB700 /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		550B0AB62A6DFB02001BB700 /* Featured.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Featured.swift; sourceTree = "<group>"; };
 		550B0ABA2A6E0378001BB700 /* FeaturedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedDetailViewController.swift; sourceTree = "<group>"; };
-		551A7E2E2A88611B005D5F39 /* SettingsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarController.swift; sourceTree = "<group>"; };
 		552207992A7AF6C600675CC4 /* CopyrightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightViewController.swift; sourceTree = "<group>"; };
 		5522079B2A7AF79A00675CC4 /* PhotoQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoQualityViewController.swift; sourceTree = "<group>"; };
 		5522079E2A7AF97A00675CC4 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +122,6 @@
 		5558BE4B2A733E5D006CB7BD /* Portrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portrait.swift; sourceTree = "<group>"; };
 		5558BE4D2A733F78006CB7BD /* PortraitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitDetailViewController.swift; sourceTree = "<group>"; };
 		556D5ECB2A79D4FD00C91DCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		556D5ECD2A79D51200C91DCF /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
-		5573C4622AD0EED200ECA231 /* IconChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconChangeViewController.swift; sourceTree = "<group>"; };
 		5576E43C2A7A717800A1707D /* ReleaseNotesViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNotesViewController.swift.swift; sourceTree = "<group>"; };
 		557B96742A59D9CC0032FDFD /* GP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		557B96772A59D9CC0032FDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +141,8 @@
 		55A1B4B22A76E7BD00E47B40 /* VaultEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultEntryTableViewCell.swift; sourceTree = "<group>"; };
 		55BC65CC2A84677B00699D42 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
 		55BC65CE2A84682F00699D42 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
-		55D5FCE82A7D3C35005427BC /* DarkModeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewCell.swift; sourceTree = "<group>"; };
+		55D0CB9E2DC56E070095F86E /* SettingsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarController.swift; sourceTree = "<group>"; };
+		55D0CB9F2DC56E070095F86E /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
 		55D753332A87B91F00810E05 /* VaultTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultTabBarController.swift; sourceTree = "<group>"; };
 		55D81D762A77070B00F67E08 /* VaultEntryParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultEntryParentViewController.swift; sourceTree = "<group>"; };
 		55DF16592A7316D6000D7681 /* LandscapeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewCell.swift; sourceTree = "<group>"; };
@@ -289,9 +285,9 @@
 		5576E43E2A7A9AE600A1707D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				55D0CB9E2DC56E070095F86E /* SettingsTabBarController.swift */,
+				55D0CB9F2DC56E070095F86E /* SettingsViewCell.swift */,
 				556D5ECB2A79D4FD00C91DCF /* SettingsViewController.swift */,
-				556D5ECD2A79D51200C91DCF /* SettingsViewCell.swift */,
-				551A7E2E2A88611B005D5F39 /* SettingsTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -370,9 +366,7 @@
 		55955CE92A7C049F00D0064E /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
-				55D5FCE82A7D3C35005427BC /* DarkModeViewCell.swift */,
 				5586A7A52A7D2B96003A8AEA /* DarkModeViewController.swift */,
-				5573C4622AD0EED200ECA231 /* IconChangeViewController.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -601,12 +595,10 @@
 				5501D76F2A7FD5560082FB53 /* OurStoryViewController.swift in Sources */,
 				55A1B4B32A76E7BD00E47B40 /* VaultEntryTableViewCell.swift in Sources */,
 				553B760E2A76C3BB0041FF87 /* VaultDetailViewController.swift in Sources */,
-				551A7E2F2A88611B005D5F39 /* SettingsTabBarController.swift in Sources */,
 				550B0ABB2A6E0378001BB700 /* FeaturedDetailViewController.swift in Sources */,
 				5576E43D2A7A717800A1707D /* ReleaseNotesViewController.swift.swift in Sources */,
 				5558BE4A2A733DB0006CB7BD /* PortraitViewController.swift in Sources */,
 				5558BE4C2A733E5D006CB7BD /* Portrait.swift in Sources */,
-				556D5ECE2A79D51200C91DCF /* SettingsViewCell.swift in Sources */,
 				5558BE482A733D98006CB7BD /* PortraitViewCell.swift in Sources */,
 				557B967C2A59D9CC0032FDFD /* Home.swift in Sources */,
 				550B0AB52A6DFA3E001BB700 /* FeaturedViewController.swift in Sources */,
@@ -620,11 +612,12 @@
 				550B0AB22A6DFA0C001BB700 /* FeaturedViewCell.swift in Sources */,
 				557B967A2A59D9CC0032FDFD /* SceneDelegate.swift in Sources */,
 				55BC65CF2A84682F00699D42 /* ContactViewController.swift in Sources */,
+				55D0CBA02DC56E070095F86E /* SettingsViewCell.swift in Sources */,
+				55D0CBA12DC56E070095F86E /* SettingsTabBarController.swift in Sources */,
 				553B760A2A76C1F80041FF87 /* Vault.swift in Sources */,
 				55DF165C2A7317FB000D7681 /* LandscapeViewController.swift in Sources */,
 				553B760C2A76C3AD0041FF87 /* VaultViewController.swift in Sources */,
 				55D81D772A77070B00F67E08 /* VaultEntryParentViewController.swift in Sources */,
-				5573C4632AD0EED200ECA231 /* IconChangeViewController.swift in Sources */,
 				55D753342A87B91F00810E05 /* VaultTabBarController.swift in Sources */,
 				55EF89BA2A7AB56300C0AD1F /* PrivacyPolicyViewController.swift in Sources */,
 				55F105822A72ABC600A64AD1 /* NewViewController.swift in Sources */,
@@ -638,7 +631,6 @@
 				550B0AB72A6DFB02001BB700 /* Featured.swift in Sources */,
 				5522079C2A7AF79A00675CC4 /* PhotoQualityViewController.swift in Sources */,
 				5522079F2A7AF97A00675CC4 /* ThankYouViewController.swift in Sources */,
-				55D5FCE92A7D3C35005427BC /* DarkModeViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,8 +703,8 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -740,8 +732,8 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -896,7 +888,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -934,7 +926,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
