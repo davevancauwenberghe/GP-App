@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// The main tab-based navigation view of the GP App
 struct MainTabView: View {
     init() {
         // Global tab bar appearance

@@ -10,7 +10,6 @@ import UIKit
 
 /// AppDelegate now used via UIApplicationDelegateAdaptor in SwiftUI App lifecycle
 class AppDelegate: NSObject, UIApplicationDelegate {
-    var window: UIWindow?
 
     func application(
         _ application: UIApplication,
@@ -32,27 +31,25 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     private func setupInitialAppAppearance() {
         let usesSystem = UserDefaults.standard.bool(forKey: "AppUsesSystemAppearance")
         if usesSystem {
-            if #available(iOS 13.0, *) {
-                window?.overrideUserInterfaceStyle = .unspecified
-            }
+            // Follow the system appearance
+            applyAppearance(style: .unspecified)
         } else {
+            // Use the saved preference
             let isDark = UserDefaults.standard.bool(forKey: "DarkModeEnabled")
-            setAppWideMode(isDark)
+            applyAppearance(style: isDark ? .dark : .light)
         }
     }
 
-    // MARK: - Appearance Helpers
-    func setAppWideMode(_ dark: Bool) {
-        if #available(iOS 13.0, *) {
-            let style: UIUserInterfaceStyle = dark ? .dark : .light
-            UIApplication.shared.connectedScenes
-                .compactMap { $0 as? UIWindowScene }
-                .flatMap { $0.windows }
-                .forEach { $0.overrideUserInterfaceStyle = style }
-        }
+    /// Applies the given user interface style to all connected scenes' windows.
+    private func applyAppearance(style: UIUserInterfaceStyle) {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .forEach { $0.overrideUserInterfaceStyle = style }
     }
 
     // MARK: - UISceneSession Lifecycle
+
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,
