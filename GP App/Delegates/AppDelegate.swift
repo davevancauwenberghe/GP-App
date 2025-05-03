@@ -8,77 +8,63 @@
 import OneSignal
 import UIKit
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+/// AppDelegate now used via UIApplicationDelegateAdaptor in SwiftUI App lifecycle
+class AppDelegate: NSObject, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        // OneSignal setup
         OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
-
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("33d6d6cc-d0f5-41fe-af21-1074df0a1450")
-
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
+        OneSignal.promptForPushNotifications { accepted in
             print("User accepted notifications: \(accepted)")
-        })
+        }
 
+        // Apply saved appearance
         setupInitialAppAppearance()
-
         return true
     }
 
-    func setupInitialAppAppearance() {
-        let usesSystemAppearance = UserDefaults.standard.bool(forKey: "AppUsesSystemAppearance")
-
-        if usesSystemAppearance {
-            // Follow the system's appearance setting
+    private func setupInitialAppAppearance() {
+        let usesSystem = UserDefaults.standard.bool(forKey: "AppUsesSystemAppearance")
+        if usesSystem {
             if #available(iOS 13.0, *) {
                 window?.overrideUserInterfaceStyle = .unspecified
             }
         } else {
-            // Use the saved preference
-            let isDarkModeEnabled = UserDefaults.standard.bool(forKey: "DarkModeEnabled")
-            setAppWideMode(isDarkModeEnabled)
+            let isDark = UserDefaults.standard.bool(forKey: "DarkModeEnabled")
+            setAppWideMode(isDark)
         }
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-    }
-
-    func setAppWideMode(_ isDarkModeEnabled: Bool) {
-        if isDarkModeEnabled {
-            applyDarkMode()
-        } else {
-            applyLightMode()
-        }
-    }
-
-    private func applyDarkMode() {
+    // MARK: - Appearance Helpers
+    func setAppWideMode(_ dark: Bool) {
         if #available(iOS 13.0, *) {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                for window in windowScene.windows {
-                    window.overrideUserInterfaceStyle = .dark
-                }
-            }
+            let style: UIUserInterfaceStyle = dark ? .dark : .light
+            UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .forEach { $0.overrideUserInterfaceStyle = style }
         }
     }
 
-    private func applyLightMode() {
-        if #available(iOS 13.0, *) {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                for window in windowScene.windows {
-                    window.overrideUserInterfaceStyle = .light
-                }
-            }
-        }
+    // MARK: - UISceneSession Lifecycle
+    func application(
+        _ application: UIApplication,
+        configurationForConnecting connectingSceneSession: UISceneSession,
+        options: UIScene.ConnectionOptions
+    ) -> UISceneConfiguration {
+        UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    func application(
+        _ application: UIApplication,
+        didDiscardSceneSessions sceneSessions: Set<UISceneSession>
+    ) {
+        // No action needed
     }
 }
