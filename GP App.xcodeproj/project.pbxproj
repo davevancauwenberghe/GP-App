@@ -200,13 +200,6 @@
 			path = Portrait;
 			sourceTree = "<group>";
 		};
-		556D5ECA2A79D4E300C91DCF /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		557B966B2A59D9CC0032FDFD = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +232,6 @@
 				55B414C92DC66A6C004B3864 /* GalleryView.swift */,
 				55B414C72DC66A3B004B3864 /* MainTabView.swift */,
 				55B414C52DC669FD004B3864 /* GPApp.swift */,
-				556D5ECA2A79D4E300C91DCF /* Settings */,
 				55B673B82A772EFF00262FD2 /* Delegates */,
 				5580E8552A6C016300072284 /* Portfolio */,
 				5501C3812A68C54A009B86F6 /* GP App.entitlements */,
