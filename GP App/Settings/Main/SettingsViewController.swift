@@ -1,12 +1,47 @@
 //
-//  SettingsView.swift
+//  SettingsViewController.swift
 //  GP App
 //
-//  Created by Dave Van Cauwenberghe on 03/05/2025.
+//  Created by Dave Van Cauwenberghe on 02/08/2023.
+//
 //
 
 import SwiftUI
+import UIKit
 
+// Helper to load the actual app icon
+fileprivate func loadAppIcon() -> UIImage {
+    if let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
+       let primary = icons["CFBundlePrimaryIcon"] as? [String: Any],
+       let files = primary["CFBundleIconFiles"] as? [String],
+       let name = files.last,
+       let image = UIImage(named: name) {
+        return image
+    }
+    return UIImage(named: "AppIcon") ?? UIImage()
+}
+
+/// SwiftUI representation of the Settings tab bar controller
+struct SettingsTabView: View {
+    init() {
+        UITabBar.appearance().tintColor = .systemBlue
+    }
+    var body: some View {
+        TabView {
+            NavigationStack {
+                SettingsView()
+                    .navigationTitle("Settings")
+                    .navigationBarTitleDisplayMode(.large)
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape.fill")
+            }
+            // Add additional tabs here if needed
+        }
+    }
+}
+
+/// Main SwiftUI settings list
 struct SettingsView: View {
     @State private var rotate = false
     @State private var floatUp = false
@@ -21,7 +56,6 @@ struct SettingsView: View {
                     Label("Push notifications", systemImage: "bell.badge.fill")
                 }
             }
-
             Section("Appearance") {
                 NavigationLink(value: "icon") {
                     Label("App icon", systemImage: "app.badge")
@@ -30,7 +64,6 @@ struct SettingsView: View {
                     Label("Dark mode", systemImage: "moon.fill")
                 }
             }
-
             Section("About GP App") {
                 NavigationLink(value: "story") {
                     Label("Our story", systemImage: "book.fill")
@@ -45,13 +78,11 @@ struct SettingsView: View {
                     Label("TestFlight", systemImage: "person.crop.circle.badge.plus")
                 }
             }
-
             Section("Contact") {
                 NavigationLink(value: "contact") {
                     Label("Let's connect", systemImage: "antenna.radiowaves.left.and.right")
                 }
             }
-
             Section("Policies") {
                 NavigationLink(value: "privacy") {
                     Label("Privacy policy", systemImage: "hand.raised.circle.fill")
@@ -67,16 +98,7 @@ struct SettingsView: View {
         .listStyle(.insetGrouped)
         .navigationDestination(for: String.self) { value in
             switch value {
-            case "notifications": AppNotificationSettingsView()
-            case "icon": IconChangeView()
-            case "darkmode": DarkModeViewController()      // placeholder
-            case "story": OurStoryView()
-            case "notes": ReleaseNotesView()
-            case "thankyou": ThankYouView()
-            case "contact": ContactView()
-            case "privacy": PrivacyPolicyView()
-            case "copyright": CopyrightView()
-            case "quality": PhotoQualityView()
+            case "darkmode": DarkModeViewController()
             default: EmptyView()
             }
         }
@@ -84,7 +106,7 @@ struct SettingsView: View {
 
     private var headerSection: some View {
         VStack(spacing: 8) {
-            Image("AppIcon")
+            Image(uiImage: loadAppIcon())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 100)
@@ -95,9 +117,7 @@ struct SettingsView: View {
                 .opacity(exploded ? 0 : 1)
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 0.5)) { rotate.toggle() }
-                    withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
-                        floatUp.toggle()
-                    }
+                    withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) { floatUp.toggle() }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         withAnimation(.easeInOut(duration: 0.15)) { exploded.toggle() }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
@@ -108,7 +128,6 @@ struct SettingsView: View {
                         }
                     }
                 }
-
             Text("© Dave Van Cauwenberghe - v1.7")
                 .font(.footnote)
                 .foregroundColor(.secondary)
@@ -118,46 +137,4 @@ struct SettingsView: View {
         .listRowSeparator(.hidden)
         .listRowInsets(EdgeInsets())
     }
-}
-
-// MARK: - Placeholder destination views
-
-struct AppNotificationSettingsView: View {
-    var body: some View { Text("Notifications settings (placeholder)") }
-}
-
-struct IconChangeView: View {
-    var body: some View { Text("Change App Icon (placeholder)") }
-}
-
-struct DarkModeViewController: View {
-    var body: some View { Text("Dark Mode settings (placeholder)") }
-}
-
-struct OurStoryView: View {
-    var body: some View { Text("Our Story (placeholder)") }
-}
-
-struct ReleaseNotesView: View {
-    var body: some View { Text("Release Notes (placeholder)") }
-}
-
-struct ThankYouView: View {
-    var body: some View { Text("Thank You (placeholder)") }
-}
-
-struct ContactView: View {
-    var body: some View { Text("Contact Us (placeholder)") }
-}
-
-struct PrivacyPolicyView: View {
-    var body: some View { Text("Privacy Policy (placeholder)") }
-}
-
-struct CopyrightView: View {
-    var body: some View { Text("Copyright Info (placeholder)") }
-}
-
-struct PhotoQualityView: View {
-    var body: some View { Text("Photo Quality Settings (placeholder)") }
 }
