@@ -12,7 +12,7 @@ class IconChangeViewController: UIViewController, UICollectionViewDelegate, UICo
     let iconNames: [String?] = [nil, "AppIcon1", "AppIcon2", "AppIcon3"]
 
     let iconImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "AppIcon"))
+        let imageView = UIImageView(image: UIImage(named: "AppIconPreview"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 48

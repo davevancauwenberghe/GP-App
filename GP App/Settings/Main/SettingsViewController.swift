@@ -29,7 +29,7 @@ class SettingsViewController: UITableViewController {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 160))
 
         // Add the AppIconImageView
-        let appIconImageView = UIImageView(image: UIImage(named: "AppIcon"))
+        let appIconImageView = UIImageView(image: UIImage(named: "AppIconPreview"))
         appIconImageView.translatesAutoresizingMaskIntoConstraints = false
         appIconImageView.contentMode = .scaleAspectFill
         appIconImageView.layer.cornerRadius = 24
@@ -38,7 +38,7 @@ class SettingsViewController: UITableViewController {
 
         let versionLabel = UILabel()
         versionLabel.translatesAutoresizingMaskIntoConstraints = false
-        versionLabel.text = "© Dave Van Cauwenberghe - v1.7"
+        versionLabel.text = "© Dave Van Cauwenberghe - v1.6.3 (50)"
         versionLabel.textAlignment = .center
         versionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         versionLabel.textColor = .darkGray
