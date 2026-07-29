@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,10 +35,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		D00000000000000000000003 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -113,8 +111,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = "GP App";
 			productName = "GP App";
 			productReference = A00000000000000000000001 /* GP App.app */;
@@ -136,7 +132,6 @@
 				};
 			};
 			buildConfigurationList = F00000000000000000000001 /* Build configuration list for PBXProject "GP App" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -144,6 +139,7 @@
 				Base,
 			);
 			mainGroup = C00000000000000000000001;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = C00000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -156,18 +152,15 @@
 /* Begin PBXResourcesBuildPhase section */
 		D00000000000000000000002 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B00000000000000000000002 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D00000000000000000000001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B00000000000000000000010 /* GPApp.swift in Sources */,
 				B00000000000000000000011 /* Photo.swift in Sources */,
@@ -178,12 +171,11 @@
 				B00000000000000000000016 /* PhotoDetailView.swift in Sources */,
 				B00000000000000000000017 /* AboutView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F00000000000000000000010 /* Debug */ = {
+		F00000000000000000000010 /* Debug configuration for PBXProject "GP App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -225,7 +217,7 @@
 			};
 			name = Debug;
 		};
-		F00000000000000000000011 /* Release */ = {
+		F00000000000000000000011 /* Release configuration for PBXProject "GP App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -265,14 +257,14 @@
 			};
 			name = Release;
 		};
-		F00000000000000000000012 /* Debug */ = {
+		F00000000000000000000012 /* Debug configuration for PBXNativeTarget "GP App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = KMS556J2F8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -292,14 +284,14 @@
 			};
 			name = Debug;
 		};
-		F00000000000000000000013 /* Release */ = {
+		F00000000000000000000013 /* Release configuration for PBXNativeTarget "GP App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = KMS556J2F8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GP App/Info.plist";
@@ -325,19 +317,17 @@
 		F00000000000000000000001 /* Build configuration list for PBXProject "GP App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F00000000000000000000010 /* Debug */,
-				F00000000000000000000011 /* Release */,
+				F00000000000000000000010 /* Debug configuration for PBXProject "GP App" */,
+				F00000000000000000000011 /* Release configuration for PBXProject "GP App" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		F00000000000000000000002 /* Build configuration list for PBXNativeTarget "GP App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F00000000000000000000012 /* Debug */,
-				F00000000000000000000013 /* Release */,
+				F00000000000000000000012 /* Debug configuration for PBXNativeTarget "GP App" */,
+				F00000000000000000000013 /* Release configuration for PBXNativeTarget "GP App" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
