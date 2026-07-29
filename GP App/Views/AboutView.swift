@@ -31,6 +31,9 @@ struct AboutView: View {
             Section { Text(versionText).foregroundStyle(.secondary) }
         }
         .navigationTitle("About")
+        .toolbarBackground(Color.accentColor, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
     }
 
     private var versionText: String {

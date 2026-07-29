@@ -39,6 +39,9 @@ struct GalleryView: View {
         .navigationDestination(for: Photo.self) { PhotoDetailView(photo: $0) }
         .searchable(text: $query, prompt: "Search locations")
         .overlay { if filtered.isEmpty { EmptyGalleryView(query: query) } }
+        .toolbarBackground(Color.accentColor, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
     }
 
     private var collectionPicker: some View {
@@ -70,12 +73,13 @@ private struct FilterButton: View {
 private struct VaultHeader: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image(systemName: "lock.shield.fill").font(.largeTitle).foregroundStyle(.orange)
+            Image(systemName: "lock.shield.fill").font(.largeTitle).foregroundStyle(.tint)
             Text("Beyond the portfolio").font(.title2.bold())
             Text("A private collection of photographs available exclusively in GP App.").foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading).padding(20)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 24))
+        .overlay { RoundedRectangle(cornerRadius: 24).stroke(Color.accentColor.opacity(0.4)) }
         .accessibilityElement(children: .combine)
     }
 }
