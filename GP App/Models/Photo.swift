@@ -4,7 +4,15 @@ struct Photo: Identifiable, Hashable {
     let assetName: String
     let title: String
     let collection: Collection
+    let details: String
     var id: String { assetName }
+
+    init(assetName: String, title: String, collection: Collection, details: String) {
+        self.assetName = assetName
+        self.title = title
+        self.collection = collection
+        self.details = details
+    }
 
     enum Collection: String, CaseIterable, Identifiable {
         case featured = "Featured"
