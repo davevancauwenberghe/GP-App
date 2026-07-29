@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0"><dict>
-<key>CFBundleIcons</key><dict><key>CFBundleAlternateIcons</key><dict><key>AppIcon1</key><dict><key>CFBundleIconFiles</key><array><string>AppIcon1</string></array></dict><key>AppIcon2</key><dict><key>CFBundleIconFiles</key><array><string>AppIcon2</string></array></dict></dict></dict>
-<key>UILaunchScreen</key><dict><key>UIColorName</key><string>AccentColor</string><key>UIImageName</key><string>GPAppIconTW</string></dict>
-</dict></plist>
+<plist version="1.0">
+<dict>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>AppIcon1</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>AppIcon1</string>
+				</array>
+			</dict>
+			<key>AppIcon2</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>AppIcon2</string>
+				</array>
+			</dict>
+		</dict>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>AccentColor</string>
+		<key>UIImageName</key>
+		<string>GPAppIconTW</string>
+	</dict>
+</dict>
+</plist>

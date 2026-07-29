@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "2600"
+   LastUpgradeVersion = "2660"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "557B96732A59D9CC0032FDFD"
+               BlueprintIdentifier = "E00000000000000000000001"
                BuildableName = "GP App.app"
                BlueprintName = "GP App"
                ReferencedContainer = "container:GP App.xcodeproj">
@@ -43,7 +43,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "557B96732A59D9CC0032FDFD"
+            BlueprintIdentifier = "E00000000000000000000001"
             BuildableName = "GP App.app"
             BlueprintName = "GP App"
             ReferencedContainer = "container:GP App.xcodeproj">
@@ -60,7 +60,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "557B96732A59D9CC0032FDFD"
+            BlueprintIdentifier = "E00000000000000000000001"
             BuildableName = "GP App.app"
             BlueprintName = "GP App"
             ReferencedContainer = "container:GP App.xcodeproj">
