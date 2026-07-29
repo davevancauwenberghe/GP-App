@@ -1,4 +1,10 @@
 # GP App
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg?logo=swift)
+![Xcode](https://img.shields.io/badge/Xcode-26.3-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-iOS%2016.0%2B%20%7C%20iPadOS%2016.0%2B-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg?link=https://github.com/davevancauwenberghe/GP-App/blob/main/LICENSE)
+![GitHub Stars](https://img.shields.io/github/stars/davevancauwenberghe/GP-App)
+
 Native iOS app for Ghent Photography
 
 Welcome to the Ghent Photography app repository! This iOS app is designed to showcase the captivating world of Ghent through a curated collection of stunning photographs captured by talented local photographers. The app serves as a visual journey, celebrating the beauty, culture, and hidden gems of the vibrant city of Ghent.
